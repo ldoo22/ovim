@@ -24,36 +24,36 @@ require('packer').startup(function(use)
     return string.format("require'plugins.%s'", name)
   end
 
-  use 'wbthomason/packer.nvim'
-  use 'morhetz/gruvbox'
-  use 'preservim/nerdtree'
+   use 'wbthomason/packer.nvim'
+   use 'morhetz/gruvbox'
+   use 'preservim/nerdtree'
+   
+   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+   
+   use 'caenrique/nvim-toggle-terminal'
 
-  use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+   use 'nvim-lua/plenary.nvim'
+   use 'ThePrimeagen/harpoon'
 
-  use 'caenrique/nvim-toggle-terminal'
+   use {
+   'VonHeikemen/lsp-zero.nvim',
+   requires = {
+       {'neovim/nvim-lspconfig'},
+       {'williamboman/nvim-lsp-installer'},
 
-  use 'nvim-lua/plenary.nvim'
-  use 'ThePrimeagen/harpoon'
+       {'hrsh7th/nvim-cmp'},
+       {'hrsh7th/cmp-buffer'},
+       {'hrsh7th/cmp-path'},
+       {'saadparwaiz1/cmp_luasnip'},
+       {'hrsh7th/cmp-nvim-lsp'},
+       {'hrsh7th/cmp-nvim-lua'},
 
-  use {
-  'VonHeikemen/lsp-zero.nvim',
-  requires = {
-      {'neovim/nvim-lspconfig'},
-      {'williamboman/nvim-lsp-installer'},
+       {'L3MON4D3/LuaSnip'},
+       {'rafamadriz/friendly-snippets'},
+     }
+   }
 
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'saadparwaiz1/cmp_luasnip'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-nvim-lua'},
-
-      {'L3MON4D3/LuaSnip'},
-      {'rafamadriz/friendly-snippets'},
-    }
-  }
-
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
 end)
