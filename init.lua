@@ -26,3 +26,9 @@ vim.cmd [[set guicursor=a:blinkon100]]
 -- Always on column (avoids moving when a warning msg happens)
 vim.cmd [[set signcolumn=yes]]
 vim.cmd [[highlight clear SignColumn]]
+
+-- Set indentation size
+vim.cmd [[set tabstop=4 shiftwidth=4]]
+
+-- Change errors floating pane text color
+vim.cmd [[hi DiagnosticFloatingError guifg=white]]
